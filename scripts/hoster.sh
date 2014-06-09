@@ -3,6 +3,6 @@
 # Starts Httpster and hosts local files
 
 
-httpser -d ./code &
+httpster -d ./code &
 
 wait;
