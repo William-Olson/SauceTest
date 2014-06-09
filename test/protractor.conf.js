@@ -5,7 +5,7 @@ exports.config = {
 
   sauceUser: 'process.env.SAUCE_USERNAME',
   sauceKey: 'process.env.SAUCE_ACCESS_KEY',
-  seleniumAddress: '127.0.0.1:4445/wd/hub',
+  seleniumAddress: 'http://localhost:4445/wd/hub',
  
   chromeOnly: false,    
   splitTestsBetweenCapabilities: true,  
