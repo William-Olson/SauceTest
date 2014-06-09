@@ -17,7 +17,7 @@ install:
 - npm install protractor 
 before_script:
   - mkdir -p $LOGS_DIR
-  - curl ./scripts/sauce_connect.sh | bash
+  - curl https://raw.githubusercontent.com/William-Olson/SauceTest/master/scripts/sauce_connect.sh | bash
   - ./scripts/wait_for_browser_provider.sh
 
 # before_script: # e.g. copy database configurations, environment variables, etc.
