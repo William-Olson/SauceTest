@@ -4,5 +4,3 @@
 
 
 httpster -d ./code &
-
-wait;
