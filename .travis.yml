@@ -15,10 +15,12 @@ env:
 
 install:
 - npm install protractor 
+- npm install httpster
 before_script:
   - mkdir -p $LOGS_DIR
   - curl https://raw.githubusercontent.com/William-Olson/SauceTest/master/scripts/sauce_connect.sh | bash
   - ./scripts/wait_for_browser_provider.sh
+  - httpster -d ./code
 
 # before_script: # e.g. copy database configurations, environment variables, etc.
 
