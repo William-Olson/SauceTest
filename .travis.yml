@@ -11,11 +11,11 @@ env:
   - secure: "e0sxpyBeP/jIHPtPyf3pTCTWr0Llx1D2fU6YYAh82OvMwX5nLH5oYAVAsAto8Mzvi2Nf9+CWOouU+kNCaeeKXxn6geW3cRWNNd035T5/vlR8Bbm6Ad9FS0W/OYZzQPAclUa6qX0d5hxrLYba0m/P+FhPKc9hxiaP2GSsqDWtTK4="
 install:
 - npm install protractor
-- npm install httpster
+# - npm install httpster
 before_script:
 - mkdir -p $LOGS_DIR
 - curl https://raw.githubusercontent.com/William-Olson/SauceTest/master/scripts/sauce_connect.sh | bash
-- ./scripts/hoster.sh
+# - ./scripts/hoster.sh
 script:
 - protractor ./test/protractor.conf.js --verbose
 after_script:
