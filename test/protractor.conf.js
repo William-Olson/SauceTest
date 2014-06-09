@@ -3,8 +3,8 @@
 exports.config = {
 
 
-  sauceUser: '{myUserName}',
-  sauceKey: '{myUserKey}',
+  sauceUser: '{SAUCE_USERNAME}',
+  sauceKey: '{SAUCE_ACESS_KEY}',
  
   chromeOnly: false,    
   splitTestsBetweenCapabilities: true,  
