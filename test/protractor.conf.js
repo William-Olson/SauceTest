@@ -3,8 +3,8 @@
 exports.config = {
 
 
-  sauceUser: $SAUCE_USERNAME,
-  sauceKey: $SAUCE_ACCESS_KEY,
+  'sauceUser': process.env.SAUCE_USERNAME,
+  'sauceKey': process.env.SAUCE_ACCESS_KEY,
   //seleniumAddress: 'http://localhost:4445/wd/hub',
  
   chromeOnly: false,    
@@ -13,24 +13,28 @@ exports.config = {
     'browserName': 'firefox',
     'platform': 'MAC',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    'build': process.env.TRAVIS_JOB_NUMBER,
     'maxInstances': 1
   }, {
     'browserName': 'chrome',
     'platform': 'LINUX',
     'version': 33,
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    'build': process.env.TRAVIS_JOB_NUMBER,
     'maxInstances': 1
   },{ 
     'browserName': 'internet explorer',
     'version': 11,
     'platform': 'ANY',
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    'build': process.env.TRAVIS_JOB_NUMBER,
     'maxInstances': 1
   },{
     'browserName': 'internet explorer',
     'platform': 'ANY',
     'version': 10,
     'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+    'build': process.env.TRAVIS_JOB_NUMBER,
     'maxInstances': 1
   }],
 
