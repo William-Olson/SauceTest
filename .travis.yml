@@ -15,7 +15,7 @@ install:
 before_script:
 - mkdir -p $LOGS_DIR
 - curl https://raw.githubusercontent.com/William-Olson/SauceTest/master/scripts/sauce_connect.sh | bash
-
+- ./scripts/hoster.sh
 script:
 - protractor ./test/protractor.conf.js
 after_script:
