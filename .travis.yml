@@ -17,6 +17,6 @@ before_script:
 - curl https://raw.githubusercontent.com/William-Olson/SauceTest/master/scripts/sauce_connect.sh | bash
 - ./scripts/hoster.sh
 script:
-- protractor ./test/protractor.conf.js
+- protractor ./test/protractor.conf.js --verbose
 after_script:
 - ./scripts/print_logs.sh
