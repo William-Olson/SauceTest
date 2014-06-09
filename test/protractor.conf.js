@@ -2,27 +2,31 @@
  
 exports.config = {
 
+
+  sauceUser: '{myUserName}',
+  sauceKey: '{myUserKey}',
  
   chromeOnly: false,    
   splitTestsBetweenCapabilities: true,  
   multiCapabilities: [{
     'browserName': 'firefox',
-    'platform': 'WINDOWS',
-    'maxInstances': 1, 
+    'platform': 'MAC',
+    'maxInstances': 1
   }, {
     'browserName': 'chrome',
     'platform': 'LINUX',
+    'version': 33,
     'maxInstances': 1
   },{ 
     'browserName': 'internet explorer',
     'version': 11,
-    'platform': 'WINDOWS',
-    'maxInstances': 1, 
-  },
-
-    'browserName': 'safari',
-    'platform': 'MAC',
-    'maxInstances': 1, 
+    'platform': 'ANY',
+    'maxInstances': 1
+  },{
+    'browserName': 'internet explorer',
+    'platform': 'ANY',
+    'version': 10,
+    'maxInstances': 1
   }],
 
 

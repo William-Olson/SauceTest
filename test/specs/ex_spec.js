@@ -6,17 +6,7 @@ describe('Example test 1', function(){
   });
 });
 
-/*describe('Example test 2', function(){
-  it('(should always fail)', function(){
-    expect(false).toBe(true);
-  });
-});
-*/
-
-
-
-
-/*
+  
 //getIpAddress() is a function that will return your host machines current ipv4 (local) address
 var os = require('os'); 
     function getIpAddress() {
@@ -36,52 +26,47 @@ var os = require('os');
     }
 
 
+ 
+// Custom locator.
+by.addLocator('buttonTextSimple', function(buttonText, opt_parentElement) {
+  // This function will be serialized as a string and will execute in the
+  // browser. The first argument is the text for the button. The second
+  // argument is the parent element, if any.
+  var using = opt_parentElement || document,
+  buttons = using.querySelectorAll('button');
 
-describe('\nExigo Login', function() {
-  it('should append @exigo.com to user input field when missing when leaving focus', function() { 
-    browser.get('192.168.100.10');  
-    element(by.model('user.username')).sendKeys('rirvin');
-    element(by.model('user.password')).sendKeys('password');
-    var inputUser = element(by.binding('user.username'));
-
-    expect(inputUser.getText()).toEqual('rirvin@exigo.com');
+  // Return an array of buttons with the text.
+  return Array.prototype.filter.call(buttons, function(button) {
+    return button.textContent === buttonText;
   });
-  it('should reject login if password is incorrect', function (){
-    element(by.css("btn-primary"))).click();
-
-    expect(element(by.model('user.password')).isPresent()).toBe(true);
-  }); 
 });
-*/
 
 
 
 
 
-/*
 describe('\nMy Angular Demo1', function() {
-  it('should greet the user by input name', function() {
-    browser.get('http://192.168.1.11:3333/code/angular/angularDemo1');  // static ip's work on remote vm's
-    //browser.get('http://' + getIpAddress() + ':3333/code/angular/angularDemo1/');  // works same as above line
-    //browser.get('http://uweb.txstate.edu/~wko4/code/angular/angularDemo1'); 
-    element(by.model('name')).sendKeys('William');
+  it('should greet the user by input name', function() { 
 
+    //browser.get('http://' + getIpAddress() + ':3333/angularDemo1/');   
+    browser.get('http://localhost:3333/angularDemo1/'); //use localhost instead
+    element(by.model('name')).sendKeys('William'); 
     var greeting = element(by.binding('name'));
 
     expect(greeting.getText()).toEqual('William');
   });
 
   describe('My List', function() {
-    var todoList;
+    var itemList;
     //get items from list
-    todoList = element.all(by.repeater('item in listItems'));
+    itemList = element.all(by.repeater('item in listItems'));
 
     it('should contain all 10 items', function() {
-      	expect(todoList.count()).toEqual(10);
+      	expect(itemList.count()).toEqual(10);
     });
 
     it('should have "1). First Item" as the first element in the list', function() {  
-      	expect(todoList.get(0).getText()).toEqual('1). FIRST ITEM');  
+      	expect(itemList.get(0).getText()).toEqual('1). FIRST ITEM');  
     });
 
   });
@@ -94,7 +79,15 @@ describe('\nMy Angular Demo1', function() {
     	var countLabel = element(by.binding('count'));
     	expect(countLabel.getText()).toEqual('Count: 3'); 
   	})
+  });
+  describe('the Clear Button', function (){
+    it('should reset the count to zero', function (){ 
+      element(by.buttonTextSimple('Clear')).click(); // Usign the custom locator.
+      var countLabel = element(by.binding('count'));
+      expect(countLabel.getText()).toEqual('Count: 0'); 
+    })
   })
 });
-*/
+
+
 
