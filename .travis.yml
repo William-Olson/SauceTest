@@ -15,7 +15,7 @@ install:
 before_script:
 - mkdir -p $LOGS_DIR
 - curl https://raw.githubusercontent.com/William-Olson/SauceTest/master/scripts/sauce_connect.sh | bash
-- ./scripts/wait_for_browser_provider.sh
+ 
 - httpster -d ./code
 script:
 - protractor ./test/protractor.conf.js
