@@ -3,7 +3,7 @@ node_js:
 - '0.10'
 env:
   matrix:
-  - JOB=test
+  - TRAVIS_JOB_NUMBER=test
   global:
   - LOGS_DIR=logs
   - BROWSER_PROVIDER_READY_FILE=/tmp/sauce-connect-ready
