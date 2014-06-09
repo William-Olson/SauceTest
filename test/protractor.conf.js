@@ -12,21 +12,25 @@ exports.config = {
   multiCapabilities: [{
     'browserName': 'firefox',
     'platform': 'MAC',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     'maxInstances': 1
   }, {
     'browserName': 'chrome',
     'platform': 'LINUX',
     'version': 33,
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     'maxInstances': 1
   },{ 
     'browserName': 'internet explorer',
     'version': 11,
     'platform': 'ANY',
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     'maxInstances': 1
   },{
     'browserName': 'internet explorer',
     'platform': 'ANY',
     'version': 10,
+    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
     'maxInstances': 1
   }],
 
