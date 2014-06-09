@@ -14,8 +14,7 @@ env:
 # before_install:  # eg. sudo apt-get update
 
 install:
-- npm install protractor
-- bash ./sauce_connect*/bin/sc
+- npm install protractor 
 before_script:
   - mkdir -p $LOGS_DIR
   - curl ./scripts/sauce_connect.sh | bash
