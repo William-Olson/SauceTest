@@ -7,7 +7,7 @@ describe('Example test 1', function(){
 });
 
   
-//getIpAddress() is a function that will return your host machines current ipv4 (local) address
+//getIpAddress() is a function that will return your host machines current ipv4 (192.168.x.x) address
 var os = require('os'); 
     function getIpAddress() {
       var ipAddress = null;

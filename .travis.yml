@@ -1,0 +1,34 @@
+language: node_js
+node_js:
+  - '0.10'
+
+env:
+  matrix:
+  - JOB=test  # ???
+  global:
+  - LOGS_DIR=/logs # ???
+  - BROWSER_PROVIDER_READY_FILE=/tmp/sauce-connect-ready
+  - secure: 0lCQABohn88CmFa5K8ey9D57P5Bzftuilup9Kw02QoMrLuj8BBC/gtswrhD44EaaSl676zAsLUthyqM9CGvkBx45WRVb29P4HlC++NIqqCTG7/br5OAZXelclhO/7xv4jVLPkGwC1bpPq7ajdtsJpHmL5GJBa2l4G/yd9WWP0dP0=
+  - secure: 0LZ0+cD9Mcf37Yl+Jq6Sf1hM/3ZMFH7SMT1k3k+UFzxjGCaQ7IE17jac3duvE8CMyoMt2UPN3hGc7xOjJyIESAatEgsCuxzCbw9S3BGBUmmZiZaXN/G1RsUEf40/nG0CarpyFpz0AyU4f8/GivtKCt3Jy70WRFPUqSw64Or2iFvI=
+
+# before_install:  # eg. sudo apt-get update
+
+install:
+- npm install protractor
+- bash ./sauce_connect*/bin/sc
+before_script:
+  - mkdir -p $LOGS_DIR
+  - curl ./scripts/sauce_connect.sh | bash
+  - ./scripts/wait_for_browser_provider.sh
+
+# before_script: # e.g. copy database configurations, environment variables, etc.
+
+script:
+  - protractor ./test/protractor.conf.js
+
+# after_success:
+
+# after_failure:
+
+after_script:
+  - ./scripts/print_logs.sh
