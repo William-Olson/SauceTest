@@ -48,8 +48,9 @@ by.addLocator('buttonTextSimple', function(buttonText, opt_parentElement) {
 describe('\nMy Angular Demo1', function() {
   it('should greet the user by input name', function() { 
 
-    browser.get('http://' + getIpAddress() + ':7777/angularDemo1/');   
+    //browser.get('http://' + getIpAddress() + ':7777/angularDemo1/');   
     //browser.get('http://localhost:3333/angularDemo1/'); //use localhost instead
+    browser.get('http://uweb.txstate.edu/~wko4/code/angular/angularDemo1/');
     element(by.model('name')).sendKeys('William'); 
     var greeting = element(by.binding('name'));
 
