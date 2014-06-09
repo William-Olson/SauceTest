@@ -3,8 +3,8 @@
 exports.config = {
 
 
-  sauceUser: '$SAUCE_USERNAME',
-  sauceKey: '$SAUCE_ACCESS_KEY',
+  sauceUser: $SAUCE_USERNAME,
+  sauceKey: $SAUCE_ACCESS_KEY,
   //seleniumAddress: 'http://localhost:4445/wd/hub',
  
   chromeOnly: false,    
