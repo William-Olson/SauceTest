@@ -37,7 +37,8 @@ by.addLocator('buttonTextSimple', function(buttonText, opt_parentElement) {
 
   // Return an array of buttons with the text.
   return Array.prototype.filter.call(buttons, function(button) {
-    return button.textContent === buttonText;
+    return button.textContent === buttonText || button.textContent === buttonText + " " 
+        || button.textContent === " " buttonText || button.textContent === " " + buttonText + " ";
   });
 });
 
