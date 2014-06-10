@@ -4,9 +4,8 @@ exports.config = {
 
 
   'sauceUser': process.env.SAUCE_USERNAME,
-  'sauceKey': process.env.SAUCE_ACCESS_KEY,
-  //seleniumAddress: 'http://localhost:4445/wd/hub',
-     //
+  'sauceKey': process.env.SAUCE_ACCESS_KEY, 
+  
   chromeOnly: false,    
   splitTestsBetweenCapabilities: true,  
   multiCapabilities: [{
