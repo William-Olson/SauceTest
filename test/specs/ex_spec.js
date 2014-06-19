@@ -1,5 +1,4 @@
-
-
+ 
 // Custom locator.
 by.addLocator('buttonTextSimple', function(buttonText, opt_parentElement) {
   // This function will be serialized as a string and will execute in the
@@ -9,14 +8,12 @@ by.addLocator('buttonTextSimple', function(buttonText, opt_parentElement) {
   buttons = using.querySelectorAll('button');
 
   // Return an array of buttons with the matching text.
-  return Array.prototype.filter.call(buttons, function(button) {
-    var temp = button.textContent;
-    return button.textContent === buttonText;
+  return Array.prototype.filter.call(buttons, function(bttn) { 
+      return bttn.textContent === buttonText;
   });
 });
 
-
-
+ 
 
 describe('\nMy Angular Demo1', function() {
   browser.get('http://localhost:3333/angularDemo1/');
@@ -39,11 +36,11 @@ describe('\nMy Angular Demo1', function() {
 
   describe('the Click me Button', function (){
   	it('should change the count label to 3 when clicked 3 times', function (){
-  		var clickMeBttn = element(by.css('button')); 
-   		for (var i = 0; i < 3; i++) 
+        var clickMeBttn = element(by.css('button')); 
+      	for (var i = 0; i < 3; i++) 
         		    clickMeBttn.click();  
-    	var countLabel = element(by.binding('count'));
-    	expect(countLabel.getText()).toEqual('Count: 3'); 
+        var countLabel = element(by.binding('count'));
+        expect(countLabel.getText()).toEqual('Count: 3'); 
   	})
   });
 
